@@ -1,0 +1,7 @@
+﻿{
+  "Forward": "W",
+  "Backward":"S",
+  "Left": "A",
+  "Right": "D",
+  "Fire": "Space"
+}
