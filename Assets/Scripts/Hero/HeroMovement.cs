@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroMovement : MonoBehaviour
+public class HeroMovement : MonoBehaviour , IInitializable
 {
+    private const string HERO_SPEED = "HeroSpeed";
+    
     private Rigidbody rg;
     private Vector3 direction;
     private float speed;
-
-    private const string HERO_SPEED = "HeroSpeed";
 
     public float Speed
     {
@@ -19,11 +19,6 @@ public class HeroMovement : MonoBehaviour
     private void Awake()
     {
         rg = GetComponent<Rigidbody>();
-    }
-
-    public void SetStats(Dictionary<string, string> stats)
-    {
-        speed = Convert.ToSingle(stats[HERO_SPEED]);
     }
 
     public void Move()
@@ -38,5 +33,10 @@ public class HeroMovement : MonoBehaviour
     public void SetDirection(Vector3 dir)
     {
         direction += dir;
+    }
+
+    public void Initialize(Dictionary<string, object> data)
+    {
+        speed = Convert.ToSingle(data[HERO_SPEED]);
     }
 }

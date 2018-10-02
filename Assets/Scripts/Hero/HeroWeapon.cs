@@ -1,8 +1,11 @@
-﻿public class HeroWeapon
-{
-    
-}
+﻿using UnityEngine;
 
-public interface IWeapon
+public class HeroWeapon : MonoBehaviour
 {
+    public Weapon weapon;
+
+    public void Fire()
+    {
+        weapon.Fire();
+    }
 }

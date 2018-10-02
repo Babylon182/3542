@@ -36,11 +36,27 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4795768933903086}
+  - component: {fileID: 54982313609255382}
   - component: {fileID: 114902907022308402}
   - component: {fileID: 114450484296794664}
-  - component: {fileID: 54982313609255382}
+  - component: {fileID: 114474698985039666}
   m_Layer: 0
   m_Name: HeroShip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1678774671439372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4515008098986800}
+  m_Layer: 0
+  m_Name: WeaponBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +79,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4515008098986800
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678774671439372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4795768933903086}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4734111941324704
 Transform:
   m_ObjectHideFlags: 1
@@ -87,6 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4876110718372152}
+  - {fileID: 4515008098986800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -214,6 +244,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb053a70db288274d98ff594ee937094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114474698985039666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436008587692502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f363174e1486b816ccb7f977dae57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
 --- !u!114 &114902907022308402
 MonoBehaviour:
   m_ObjectHideFlags: 1

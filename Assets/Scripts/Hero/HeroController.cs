@@ -52,8 +52,8 @@ public class HeroController : MonoBehaviour
     private void SetHeroStats()
     {
         TextAsset heroStats = Resources.Load<TextAsset>(JsonPath.HERO_STATS_PATH);
-        Dictionary<string, string> dictionaryHeroStats = JsonConvert.DeserializeObject<Dictionary<string, string>>(heroStats.text);
+        Dictionary<string, object> dictionaryHeroStats = JsonConvert.DeserializeObject<Dictionary<string, object>>(heroStats.text);
         
-        heroMovement.SetStats(dictionaryHeroStats);
+        heroMovement.Initialize(dictionaryHeroStats);
     }
 }
