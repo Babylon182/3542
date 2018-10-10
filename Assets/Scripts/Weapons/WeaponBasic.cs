@@ -2,8 +2,8 @@
 
 public class WeaponBasic : Weapon
 {
-    public override void CreateBullet()
+    protected override void CreateBullet()
     {
-        //GodPool.Instance.InstantiatePoolObject(bullet);
+        GodPool.Instance.InstantiatePoolObject(weaponData.bullet.gameObject, transform.position,transform.rotation);
     }
 }

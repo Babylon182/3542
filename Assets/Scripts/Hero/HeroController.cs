@@ -2,25 +2,27 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
+[RequireComponent(typeof(HeroMovement), typeof(HeroWeapon))]
 public class HeroController : MonoBehaviour
 {
     private HeroMovement heroMovement;
+    private HeroWeapon heroWeapon;
 
     private void Awake()
     {
         InputController.Initialize(); //TODO Buscar una MUCHA mejor manera de llamar a esto.
         Initialize();
-        SetHeroStats();
     }
 
     private void Initialize()
     {
-        heroMovement = gameObject.AddComponent<HeroMovement>();
+        heroMovement = gameObject.GetComponent<HeroMovement>();
+        heroWeapon = gameObject.GetComponent<HeroWeapon>();
     }
 
     void Update()
     {
-        HeroMovementInputs();
+        HeroInputs();
     }
 
     private void FixedUpdate()
@@ -28,8 +30,9 @@ public class HeroController : MonoBehaviour
         heroMovement.Move();
     }
 
-    private void HeroMovementInputs()
+    private void HeroInputs()
     {
+        #region Movement Input
         if (InputController.GetKey(GameInputs.Forward))
         {
             heroMovement.SetDirection(transform.forward);
@@ -47,13 +50,13 @@ public class HeroController : MonoBehaviour
         {
             heroMovement.SetDirection(-transform.right);
         }
-    }
-
-    private void SetHeroStats()
-    {
-        TextAsset heroStats = Resources.Load<TextAsset>(JsonPath.HERO_STATS_PATH);
-        Dictionary<string, object> dictionaryHeroStats = JsonConvert.DeserializeObject<Dictionary<string, object>>(heroStats.text);
+        #endregion
         
-        heroMovement.Initialize(dictionaryHeroStats);
+        #region Shoot Input
+        if (InputController.GetKey(GameInputs.Fire))
+        {
+            heroWeapon.Fire();
+        }
+        #endregion
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace ObjectsPool
 {
+	//TODO: Usar Zenject para inyectar esta clase en la escena
+	
 	public class GodPool : MonoBehaviour
 	{
 		public static GodPool Instance => instance;

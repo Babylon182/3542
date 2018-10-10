@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(SphereCollider))]
 public abstract class Bullet : MonoBehaviour
 {
-    protected float speed;
-    protected float damage;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float damage;
     
-    public abstract void Movement();
-    public abstract void Damage();
+    protected abstract void Movement();
 
     public virtual void Update()
     {
         Movement();
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
+        var target = other.GetComponent<DamageableEntity>();
         
+        if (target != null)
+        {
+            target.GotHit = damage;
+            Destroy(gameObject);
+        }
     }
 }

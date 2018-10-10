@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class HeroMovement : MonoBehaviour , IInitializable
+public class HeroMovement : MonoBehaviour
 {
-    private const string HERO_SPEED = "HeroSpeed";
+    [SerializeField] private float speed;
     
     private Rigidbody rg;
     private Vector3 direction;
-    private float speed;
 
     public float Speed
     {
@@ -33,10 +30,5 @@ public class HeroMovement : MonoBehaviour , IInitializable
     public void SetDirection(Vector3 dir)
     {
         direction += dir;
-    }
-
-    public void Initialize(Dictionary<string, object> data)
-    {
-        speed = Convert.ToSingle(data[HERO_SPEED]);
     }
 }

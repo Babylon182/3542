@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour , IInitializable
+public abstract class Weapon : MonoBehaviour
 {
-    private const string RATE_OF_FIRE = "rateOfFire";
-
-    [SerializeField] protected Bullet bullet;
-    [SerializeField] protected WeaponType weaponType;
-    protected float rateOfFire;
+    [SerializeField]
+    protected WeaponData weaponData;
     
     private float currentTime;
 
-    public abstract void CreateBullet();
+    protected abstract void CreateBullet();
 
     public virtual void Update()
     {
@@ -30,14 +25,7 @@ public abstract class Weapon : MonoBehaviour , IInitializable
     
     protected bool CanShoot()
     {
-        return currentTime > rateOfFire;
-    }
-
-    public void Initialize(Dictionary<string, object> data)
-    {
-        var weaponData = (Dictionary<string, object>) data[weaponType.ToString()];
-        rateOfFire = Convert.ToSingle(weaponData[RATE_OF_FIRE]);
-
+        return currentTime > weaponData.rateOfFire;
     }
 }
 

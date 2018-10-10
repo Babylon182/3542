@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - HeroBullets
+  - EnemyBullets
+  - Hero
+  - Enemy
   - 
   - 
   - 
