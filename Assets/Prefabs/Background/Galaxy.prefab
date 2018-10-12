@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1713942581300216}
+  m_IsPrefabAsset: 1
+--- !u!1 &1713942581300216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4108088516876398}
+  - component: {fileID: 114736197835122818}
+  - component: {fileID: 114504932005003244}
+  m_Layer: 0
+  m_Name: Galaxy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4108088516876398
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713942581300216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -180, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114504932005003244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713942581300216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051b9adef5d31da4fb0f8f4fef5c2d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 75
+--- !u!114 &114736197835122818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713942581300216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b9eb7adac4c9e449016bc3267c792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStars: 100
+  maxAsteroids: 30
+  maxQuads: 5
+  stars:
+  - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 2}
+  - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 2}
+  - {fileID: 1832912916859312, guid: 6899e65381a47fa4a9404fdcdf0769fe, type: 2}
+  - {fileID: 1494264238544456, guid: 6d913173afd537b4595cb75aef3b2f8e, type: 2}
+  - {fileID: 1460519080176366, guid: 938c5120db6e99b458cdd989d60d64d4, type: 2}
+  asteroids:
+  - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 2}
+  - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 2}
+  - {fileID: 1201599644208732, guid: f076f0ebe8ebf0d47993c812e3b6458a, type: 2}
+  quads:
+  - {fileID: 1512245630168110, guid: 330c23b464006644682ab1d36f989ba4, type: 2}
+  - {fileID: 1311563321521796, guid: 6fa97040e53793740bc04fd2494346bd, type: 2}
+  - {fileID: 1530723917702746, guid: b2775e0b951a820428076520d1a2c9b6, type: 2}
