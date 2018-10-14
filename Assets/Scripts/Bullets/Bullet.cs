@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ObjectsPool;
+using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public abstract class Bullet : MonoBehaviour
