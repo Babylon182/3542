@@ -6,17 +6,23 @@ ModelImporter:
     100000: //RootNode
     100002: 5_Ship
     100004: Object
+    100006: 3_Ship
     400000: //RootNode
     400002: 5_Ship
     400004: Object
+    400006: 3_Ship
     2100000: 5_ShipMat
     2100002: ObjectMat
+    2100004: 3_ShipMat
     2300000: 5_Ship
     2300002: Object
+    2300004: 3_Ship
     3300000: 5_Ship
     3300002: Object
+    3300004: 3_Ship
     4300000: 5_Ship
     4300002: Object
+    4300004: 3_Ship
   externalObjects: {}
   materials:
     importMaterials: 1
