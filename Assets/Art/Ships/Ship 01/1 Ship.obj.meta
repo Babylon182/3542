@@ -6,17 +6,23 @@ ModelImporter:
     100000: //RootNode
     100002: 3_Third_Try
     100004: Object
+    100006: 1_Ship
     400000: //RootNode
     400002: 3_Third_Try
     400004: Object
+    400006: 1_Ship
     2100000: 3_Third_TryMat
     2100002: ObjectMat
+    2100004: 1_ShipMat
     2300000: 3_Third_Try
     2300002: Object
+    2300004: 1_Ship
     3300000: 3_Third_Try
     3300002: Object
+    3300004: 1_Ship
     4300000: 3_Third_Try
     4300002: Object
+    4300004: 1_Ship
   externalObjects: {}
   materials:
     importMaterials: 1
