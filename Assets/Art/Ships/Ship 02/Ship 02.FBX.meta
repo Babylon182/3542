@@ -1,28 +1,26 @@
 fileFormatVersion: 2
-guid: 88935dfbd213e724ea95674cbc21f592
+guid: 2071f163c67b88e4ab8f2351fe2c8a55
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: 5_Ship
-    100004: Object
-    100006: 3_Ship
-    400000: //RootNode
-    400002: 5_Ship
-    400004: Object
-    400006: 3_Ship
-    2100000: 5_ShipMat
-    2100002: ObjectMat
-    2100004: 3_ShipMat
-    2300000: 5_Ship
-    2300002: Object
-    2300004: 3_Ship
-    3300000: 5_Ship
-    3300002: Object
-    3300004: 3_Ship
-    4300000: 5_Ship
+    100000: Object
+    100002: Object002
+    100004: //RootNode
+    100006: Ship_02
+    400000: Object
+    400002: Object002
+    400004: //RootNode
+    400006: Ship_02
+    2100000: Ship 02_palette
+    2300000: Object
+    2300002: Object002
+    2300004: Ship_02
+    3300000: Object
+    3300002: Object002
+    3300004: Ship_02
+    4300000: Ship_02
     4300002: Object
-    4300004: 3_Ship
+    4300004: Object002
   externalObjects: {}
   materials:
     importMaterials: 1
