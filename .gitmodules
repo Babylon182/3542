@@ -1,0 +1,3 @@
+[submodule "Assets/GuidoUtilities"]
+	path = Assets/GuidoUtilities
+	url = git@github.com:Babylon182/GuidoUtilities.git
