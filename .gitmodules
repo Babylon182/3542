@@ -1,0 +1,3 @@
+[submodule "Assets/CalongeCore"]
+	path = Assets/CalongeCore
+	url = git@github.com:Babylon182/Calonge_Core.git
