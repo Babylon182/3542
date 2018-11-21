@@ -1,28 +1,26 @@
 fileFormatVersion: 2
-guid: a1008b346f4fede40b09bacce218ef9d
+guid: 4caba79bba3efe1458a05cf35cca07d0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: 1_Ship
-    100004: 1_Enemy
-    100006: 1_First_Try
-    400000: //RootNode
-    400002: 1_Ship
-    400004: 1_Enemy
-    400006: 1_First_Try
-    2100000: 1_ShipMat
-    2100002: 1_EnemyMat
-    2100004: 1_First_TryMat
-    2300000: 1_Ship
-    2300002: 1_Enemy
-    2300004: 1_First_Try
-    3300000: 1_Ship
-    3300002: 1_Enemy
-    3300004: 1_First_Try
-    4300000: 1_Ship
-    4300002: 1_Enemy
-    4300004: 1_First_Try
+    100000: Object
+    100002: Object002
+    100004: //RootNode
+    100006: Ship_01
+    400000: Object
+    400002: Object002
+    400004: //RootNode
+    400006: Ship_01
+    2100000: Ship 01_palette
+    2300000: Object
+    2300002: Object002
+    2300004: Ship_01
+    3300000: Object
+    3300002: Object002
+    3300004: Ship_01
+    4300000: Ship_01
+    4300002: Object
+    4300004: Object002
   externalObjects: {}
   materials:
     importMaterials: 1
