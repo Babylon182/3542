@@ -1,11 +1,13 @@
 ﻿using System.Collections;
-using ObjectsPool;
 using UnityEngine;
 
 public class DestroyByTime : MonoBehaviour
 {
 	[SerializeField]
 	private float timer;
+	
+	[Zenject.Inject]
+	private IPool pool;
 
 	private void OnEnable()
 	{
@@ -15,6 +17,6 @@ public class DestroyByTime : MonoBehaviour
 	IEnumerator StartTimer()
 	{
 		yield return new WaitForSeconds(timer);
-		GodPool.Instance.ReturnPoolObject(gameObject);
+		pool.Destroy(gameObject);
 	}
 }

@@ -7,6 +7,9 @@ public class DamageableEntity : MonoBehaviour , IGotHit, IPoolable
     [SerializeField] private float radiusSize;
     
     protected BulletDetectorManager bulletDetectorManager;
+    
+    [Zenject.Inject]
+    private IPool pool;
 
     public float RadiusSize => radiusSize;
     
@@ -28,7 +31,7 @@ public class DamageableEntity : MonoBehaviour , IGotHit, IPoolable
         life.Value -= damage;
         if (life.Value <= 0)
         {
-            GodPool.Instance.ReturnPoolObject(this.gameObject);
+            pool.Destroy(this.gameObject);
         }
     }
 

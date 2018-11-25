@@ -1,9 +1,10 @@
-﻿using ObjectsPool;
-
-public class WeaponBasic : Weapon
+﻿public class WeaponBasic : Weapon
 {
+    [Zenject.Inject]
+    private IPool pool;
+    
     protected override void CreateBullet()
     {
-        GodPool.Instance.InstantiatePoolObject(weaponData.bullet.gameObject, transform.position,transform.rotation);
+        pool.Instantiate(weaponData.bullet.gameObject, transform.position,transform.rotation);
     }
 }

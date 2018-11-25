@@ -8,13 +8,16 @@ public abstract class Bullet : MonoBehaviour , IGotHit, IPoolable
     [SerializeField] protected float radiusSize;
     
     [SerializeField] protected BulletDetectorManager bulletDetectorManager;
+
+    [Zenject.Inject]
+    private IPool pool;
     
     public float RadiusSize => radiusSize;
     public float Damage => damage;
 
     public void GotDamaged(float damaged)
     {
-        GodPool.Instance.ReturnPoolObject(this.gameObject);
+        pool.Destroy(this.gameObject);
     }
 
     protected abstract void Movement();
