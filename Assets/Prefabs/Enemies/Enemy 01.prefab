@@ -19,8 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4671881804755374}
-  - component: {fileID: 54497159582372378}
-  - component: {fileID: 65449666878401632}
   - component: {fileID: 114610380223411846}
   - component: {fileID: 114431145965495904}
   m_Layer: 12
@@ -291,33 +289,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511803756041362}
   m_Mesh: {fileID: 4300002, guid: 3034b7fe7e17a02418723e3bfcce18bb, type: 3}
---- !u!54 &54497159582372378
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155925527527490}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 36
-  m_CollisionDetection: 0
---- !u!65 &65449666878401632
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155925527527490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8, y: 1, z: 1.8}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114431145965495904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,6 +304,8 @@ MonoBehaviour:
     useConstant: 1
     constantValue: 1
     variable: {fileID: 0}
+  radiusSize: 1
+  bulletDetectorManager: {fileID: 0}
 --- !u!114 &114610380223411846
 MonoBehaviour:
   m_ObjectHideFlags: 1

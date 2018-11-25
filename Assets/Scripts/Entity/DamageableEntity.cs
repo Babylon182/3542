@@ -1,18 +1,44 @@
-﻿using UnityEngine;
+﻿using ObjectsPool;
+using UnityEngine;
 
-public class DamageableEntity : MonoBehaviour
+public class DamageableEntity : MonoBehaviour , IGotHit, IPoolable
 {
     [SerializeField] private FloatReference life;
+    [SerializeField] private float radiusSize;
+    
+    protected BulletDetectorManager bulletDetectorManager;
 
-    public float GotHit
+    public float RadiusSize => radiusSize;
+    
+    public virtual void Awake()
     {
-        set
+        // ------Testing
+        bulletDetectorManager = FindObjectOfType<BulletDetectorManager>();
+        // -------------
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position , radiusSize);
+    }
+
+    public void GotDamaged(float damage)
+    {
+        life.Value -= damage;
+        if (life.Value <= 0)
         {
-            life.Value -= value;
-            if (life.Value <= 0)
-            {
-                Destroy(gameObject);
-            }
+            GodPool.Instance.ReturnPoolObject(this.gameObject);
         }
+    }
+
+    public void Init()
+    {
+        bulletDetectorManager.AddDamageableEntity(this);
+    }
+
+    public void Dispose()
+    {
+        bulletDetectorManager.RemoveDamageableEntity(this);
     }
 }
