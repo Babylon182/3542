@@ -7,9 +7,9 @@ public class BulletDetectorManager : MonoBehaviour
 {
 	private HashSet<Bullet> allBullets = new HashSet<Bullet>();
 	private HashSet<DamageableEntity> allDamageableEntities = new HashSet<DamageableEntity>();
-	private HashSet<Tuple<IGotHit, float>> entitiesThatCollide = new HashSet<Tuple<IGotHit, float>>();
+	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
 
-    private IEnumerable<IGotHit> bulletsThatCollide;
+    private IEnumerable<ICanCollide> bulletsThatCollide;
 
 	private void Awake()
 	{
@@ -20,11 +20,11 @@ public class BulletDetectorManager : MonoBehaviour
 				var totalRadius = entity.RadiusSize * entity.RadiusSize + bullet.RadiusSize * bullet.RadiusSize;
 				var deltaVector = bullet.transform.position - entity.transform.position;
 
-				var isColliding = entity.GetComponent<HeroController>() == null && deltaVector.sqrMagnitude < totalRadius;
+				var isColliding = entity.Afiliation != bullet.Afiliation && deltaVector.sqrMagnitude < totalRadius;
 
 				if (isColliding)
 				{
-					Tuple<IGotHit, float> tuple = new Tuple<IGotHit, float>(entity, bullet.Damage);
+					Tuple<ICanCollide, float> tuple = new Tuple<ICanCollide, float>(entity, bullet.Damage);
 					entitiesThatCollide.Add(tuple);
 				}
 

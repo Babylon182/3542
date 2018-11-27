@@ -300,12 +300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a02a0cd609474ba11b986e32109b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afiliation: 1
   life:
     useConstant: 1
     constantValue: 1
     variable: {fileID: 0}
   radiusSize: 1
-  bulletDetectorManager: {fileID: 0}
 --- !u!114 &114610380223411846
 MonoBehaviour:
   m_ObjectHideFlags: 1

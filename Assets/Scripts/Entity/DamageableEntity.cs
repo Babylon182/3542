@@ -1,8 +1,9 @@
-﻿using ObjectsPool;
+﻿using CalongeCore.ObjectsPool;
 using UnityEngine;
 
-public class DamageableEntity : MonoBehaviour , IGotHit, IPoolable
+public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
 {
+    [SerializeField] protected EntityType afiliation;
     [SerializeField] private FloatReference life;
     [SerializeField] private float radiusSize;
     
@@ -11,6 +12,7 @@ public class DamageableEntity : MonoBehaviour , IGotHit, IPoolable
     [Zenject.Inject]
     private IPool pool;
 
+    public EntityType Afiliation => afiliation;
     public float RadiusSize => radiusSize;
     
     public virtual void Awake()
