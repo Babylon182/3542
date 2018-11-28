@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4119663763816776}
   - component: {fileID: 33485429789071780}
   - component: {fileID: 23084335859312820}
-  - component: {fileID: 65020210929116640}
   m_Layer: 0
   m_Name: Bullet Shape
   m_TagString: Untagged
@@ -54,7 +53,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4087865614054086}
-  - component: {fileID: 135213299697914322}
   - component: {fileID: 114522829310402642}
   - component: {fileID: 114550426170020956}
   m_Layer: 9
@@ -71,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716416472486480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6731086, y: 11.167168, z: -13.377318}
+  m_LocalPosition: {x: 2.472381, y: 1.8192225, z: 2.8823898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4119663763816776}
@@ -147,18 +145,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252754029343764}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65020210929116640
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252754029343764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114522829310402642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
+  radiusSize: 0.2
+  bulletDetectorManager: {fileID: 0}
 --- !u!114 &114550426170020956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,18 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 3
---- !u!135 &135213299697914322
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1716416472486480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198895254158831574
 ParticleSystem:
   m_ObjectHideFlags: 1
