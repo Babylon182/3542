@@ -3,9 +3,8 @@
 public abstract class EntityMovement : MonoBehaviour
 {
     [SerializeField] protected float speed; 
-    protected Vector3 direction;
 
-    public abstract void Move();
+    public abstract void Move(Vector3 destination);
     
     public float Speed
     {
