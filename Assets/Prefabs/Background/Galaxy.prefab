@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051b9adef5d31da4fb0f8f4fef5c2d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  speed: 45
 --- !u!114 &114736197835122818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   offset: 10
   maxStars: 100
   maxAsteroids: 30
-  maxQuads: 6
+  maxQuads: 10
   stars:
   - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 2}
   - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 2}
