@@ -1,2 +1,5 @@
 3542.sln
 Packages/manifest.json
+Assets/Plugins/Editor/JetBrains/
+Assets/Plugins/Editor/
+Assets/Plugins/Editor.meta
