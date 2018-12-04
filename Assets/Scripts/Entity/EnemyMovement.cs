@@ -2,13 +2,14 @@
 
 public class EnemyMovement : EntityMovement
 {
-    public override void Move()
+    public override void Move(Vector3 destination)
     {
-        transform.position += transform.forward * Time.deltaTime * speed;
+        transform.position += destination * Time.deltaTime * speed;
     }
 
     private void Update()
     {
-        Move();
+        var destination = transform.forward;
+        Move(destination);
     }
 }

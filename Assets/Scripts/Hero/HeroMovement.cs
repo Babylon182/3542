@@ -2,24 +2,28 @@
 
 public class HeroMovement : EntityMovement
 {
-    private Rigidbody rg;
+    [SerializeField]
+    private float heroSize;
 
-    private void Awake()
+    [Zenject.Inject]
+    private Boundaries boundaries;
+
+    private Vector2 sideLimits;
+    private Vector2 frontLimits;
+
+    private void Start()
     {
-        rg = GetComponent<Rigidbody>();
+        sideLimits = new Vector2(boundaries.LeftBoundary + heroSize, boundaries.RightBoundary - heroSize);
+        frontLimits = new Vector2(boundaries.BottomBoundary + heroSize, boundaries.TopBoundary - heroSize);
     }
-
-    public override void Move()
+    public override void Move(Vector3 destination)
     {
-        if (direction == Vector3.zero)
+        if (destination == transform.position)
             return;
 
-        rg.MovePosition(transform.position + direction.normalized * speed * Time.deltaTime);
-        direction = Vector3.zero;
-    }
+        destination.x = Mathf.Clamp(destination.x, sideLimits.x, sideLimits.y);
+        destination.z = Mathf.Clamp(destination.z, frontLimits.x, frontLimits.y);
 
-    public void SetDirection(Vector3 dir)
-    {
-        direction += dir;
+        transform.position = Vector3.MoveTowards(transform.position , destination, speed * Time.deltaTime);
     }
 }

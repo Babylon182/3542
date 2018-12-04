@@ -2,13 +2,11 @@
 
 public class Boundaries
 {
-    private float width;
-    private float leftBoundary;
-    private float rightBoundary;
-
-    public float Width => width;
-    public float LeftBoundary => leftBoundary;
-    public float RightBoundary => rightBoundary;
+    public float Width { get; private set; }
+    public float LeftBoundary { get; private set; }
+    public float RightBoundary { get; private set; }
+    public float TopBoundary { get; private set; }
+    public float BottomBoundary { get; private set; }
 
     public void GetBoundaries()
     {
@@ -16,9 +14,11 @@ public class Boundaries
         var leftCoordinates = new Vector3(0, 0, mainCamera.transform.position.y);
         var rightCoordinates = new Vector3(1, 1, mainCamera.transform.position.y);
         
-        leftBoundary = mainCamera.ViewportToWorldPoint(leftCoordinates).x;
-        rightBoundary = mainCamera.ViewportToWorldPoint(rightCoordinates).x;
+        LeftBoundary = mainCamera.ViewportToWorldPoint(leftCoordinates).x;
+        RightBoundary = mainCamera.ViewportToWorldPoint(rightCoordinates).x;
+        TopBoundary = mainCamera.ViewportToWorldPoint(rightCoordinates).z;
+        BottomBoundary = mainCamera.ViewportToWorldPoint(leftCoordinates).z;
 
-        width = rightBoundary - leftBoundary;   
+        Width = RightBoundary - LeftBoundary;   
     }
 }

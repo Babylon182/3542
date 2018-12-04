@@ -25,38 +25,29 @@ public class HeroController : MonoBehaviour
         HeroInputs();
     }
 
-    private void FixedUpdate()
-    {
-        heroMovement.Move();
-    }
-
     private void HeroInputs()
     {
-        #region Movement Input
-        if (InputController.GetKey(GameInputs.Forward))
-        {
-            heroMovement.SetDirection(transform.forward);
-        }
-        else if (InputController.GetKey(GameInputs.Backward))
-        {
-            heroMovement.SetDirection(-transform.forward);
-        }
+        MovementInputs();
+        ShootInputs();
+    }
 
-        if (InputController.GetKey(GameInputs.Right))
+    private void MovementInputs()
+    {
+        var plane = new Plane(Vector3.up, transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float enter = 0.0f;
+        if (plane.Raycast(ray, out enter))
         {
-            heroMovement.SetDirection(transform.right);
+            Vector3 hitPoint = ray.GetPoint(enter);
+            heroMovement.Move(hitPoint);
         }
-        else if (InputController.GetKey(GameInputs.Left))
-        {
-            heroMovement.SetDirection(-transform.right);
-        }
-        #endregion
-        
-        #region Shoot Input
+    }
+
+    private void ShootInputs()
+    {
         if (InputController.GetKey(GameInputs.Fire))
         {
             heroWeapon.Fire();
         }
-        #endregion
     }
 }
