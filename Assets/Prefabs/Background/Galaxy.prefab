@@ -64,9 +64,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b9eb7adac4c9e449016bc3267c792a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starsHeight: -180
+  asteroidsHeight: -75
+  planetsHeight: -120
+  offset: 10
   maxStars: 100
   maxAsteroids: 30
-  maxQuads: 5
+  maxQuads: 6
   stars:
   - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 2}
   - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 2}
@@ -77,7 +81,13 @@ MonoBehaviour:
   - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 2}
   - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 2}
   - {fileID: 1201599644208732, guid: f076f0ebe8ebf0d47993c812e3b6458a, type: 2}
+  - {fileID: 1843366029334282, guid: a24b714e41060d8429b025afe9067fd8, type: 2}
+  - {fileID: 1391238425633350, guid: 3a6613c2659a0d64191fd56765bf2611, type: 2}
+  - {fileID: 1932103351723358, guid: 0b23aed072879f048bd6721adca0bbd4, type: 2}
   quads:
-  - {fileID: 1512245630168110, guid: 330c23b464006644682ab1d36f989ba4, type: 2}
-  - {fileID: 1311563321521796, guid: 6fa97040e53793740bc04fd2494346bd, type: 2}
-  - {fileID: 1530723917702746, guid: b2775e0b951a820428076520d1a2c9b6, type: 2}
+  - {fileID: 1103843851376690, guid: 6a9fd257b1a9f864cac1a5f04278b34a, type: 2}
+  - {fileID: 1073415533664576, guid: b51370c7d0cbe05408289eaf9cf020c0, type: 2}
+  - {fileID: 1210914537460188, guid: 4e71754f6cde6fd48aa59b250b6a3fe7, type: 2}
+  - {fileID: 1807676780288366, guid: 1f2a815e5a96a3d49a69b890191413ef, type: 2}
+  - {fileID: 1481977525938038, guid: 6f05ee635e6d8f048b3c6c2e15510c66, type: 2}
+  - {fileID: 1325152828449260, guid: 4f62e8ea4fa2db54d9d3a52357000e09, type: 2}

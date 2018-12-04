@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class StarsGenerator : MonoBehaviour
 {
+    public float starsHeight;
+    public float asteroidsHeight;
+    public float planetsHeight;
+    public int offset;
+
 
     public int maxStars;
     public int maxAsteroids;
@@ -32,7 +37,7 @@ public class StarsGenerator : MonoBehaviour
             _starsRandomCode = (int)Random.Range(0,stars.Count);
 
             starPos = new Vector3(Random.Range(-Screen.width/2, Screen.width/2), 
-                Random.Range(-180, -185), 
+                Random.Range(starsHeight + offset, starsHeight - offset), 
                 Random.Range(gameObject.transform.position.z -Screen.height - 50, 
                 gameObject.transform.position.z + Screen.height + 50));
 
@@ -48,7 +53,7 @@ public class StarsGenerator : MonoBehaviour
             _asteroidsRandomCode = (int)Random.Range(0, asteroids.Count);
 
             asteroidPos = new Vector3(Random.Range(-Screen.width / 2, Screen.width / 2),
-                Random.Range(-180, -185),
+                Random.Range(asteroidsHeight + offset, asteroidsHeight - offset),
                 Random.Range(gameObject.transform.position.z - Screen.height - 50,
                 gameObject.transform.position.z + Screen.height + 50));
 
@@ -64,12 +69,11 @@ public class StarsGenerator : MonoBehaviour
             _quadRandomCode = (int)Random.Range(0, quads.Count);
 
             quadPos = new Vector3(Random.Range(-Screen.width / 2, Screen.width/2),
-                -185, 
+                Random.Range (planetsHeight + offset, planetsHeight - offset), 
                 Random.Range(gameObject.transform.position.z - Screen.height, 
                 gameObject.transform.position.z + Screen.height));
 
-
-            var currentStar = Instantiate(quads[_quadRandomCode], quadPos, Quaternion.identity);
+            var currentStar = Instantiate(quads[_quadRandomCode], quadPos, Quaternion.Euler(Random.Range(0, 350), Random.Range(0, 350), Random.Range(0, 350)));
             currentStar.transform.parent = gameObject.transform;
         }
     }
