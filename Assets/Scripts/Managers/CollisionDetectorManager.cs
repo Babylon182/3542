@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BulletDetectorManager : MonoBehaviour
+public class CollisionDetectorManager : MonoBehaviour
 {
 	private HashSet<Bullet> allBullets = new HashSet<Bullet>();
 	private HashSet<DamageableEntity> allDamageableEntities = new HashSet<DamageableEntity>();
 	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
 
     private IEnumerable<ICanCollide> bulletsThatCollide;
+	
+	[Zenject.Inject]
+	private Hero hero;
 
 	private void Awake()
 	{
@@ -69,7 +72,20 @@ public class BulletDetectorManager : MonoBehaviour
 		{
 			entities.Item1.GotDamaged(entities.Item2);
 		}
-		
+
+		var heroIsColliding = allDamageableEntities.Any(enemy =>
+		{
+			var totalRadius = enemy.RadiusSize * enemy.RadiusSize + hero.RadiusSize * hero.RadiusSize;
+			var deltaVector = enemy.transform.position - hero.transform.position;
+
+			return deltaVector.sqrMagnitude < totalRadius;
+		});
+
+		if (heroIsColliding)
+		{
+			hero.GotDamaged();
+		}
+
 		entitiesThatCollide.Clear();
     }
 }
