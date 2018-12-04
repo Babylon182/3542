@@ -8,7 +8,7 @@ public abstract class Bullet : MonoBehaviour , ICanCollide, IPoolable
     [SerializeField] protected float damage;
     [SerializeField] protected float radiusSize;
     
-    private BulletDetectorManager bulletDetectorManager;
+    private CollisionDetectorManager collisionDetectorManager;
 
     [Zenject.Inject]
     private IPool pool;
@@ -27,7 +27,7 @@ public abstract class Bullet : MonoBehaviour , ICanCollide, IPoolable
     public virtual void Awake()
     {
         // ------Testing
-        bulletDetectorManager = FindObjectOfType<BulletDetectorManager>();
+        collisionDetectorManager = FindObjectOfType<CollisionDetectorManager>();
         //--------------
     }
 
@@ -44,11 +44,11 @@ public abstract class Bullet : MonoBehaviour , ICanCollide, IPoolable
 
     public void Init()
     {
-        bulletDetectorManager.AddBullet(this);
+        collisionDetectorManager.AddBullet(this);
     }
 
     public void Dispose()
     {
-        bulletDetectorManager.RemoveBullet(this);
+        collisionDetectorManager.RemoveBullet(this);
     }
 }

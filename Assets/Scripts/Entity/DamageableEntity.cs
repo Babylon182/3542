@@ -7,7 +7,7 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     [SerializeField] private FloatReference life;
     [SerializeField] private float radiusSize;
     
-    protected BulletDetectorManager bulletDetectorManager;
+    protected CollisionDetectorManager collisionDetectorManager;
     
     [Zenject.Inject]
     private IPool pool;
@@ -18,7 +18,7 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     public virtual void Awake()
     {
         // ------Testing
-        bulletDetectorManager = FindObjectOfType<BulletDetectorManager>();
+        collisionDetectorManager = FindObjectOfType<CollisionDetectorManager>();
         // -------------
     }
     
@@ -39,11 +39,11 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
 
     public void Init()
     {
-        bulletDetectorManager.AddDamageableEntity(this);
+        collisionDetectorManager.AddDamageableEntity(this);
     }
 
     public void Dispose()
     {
-        bulletDetectorManager.RemoveDamageableEntity(this);
+        collisionDetectorManager.RemoveDamageableEntity(this);
     }
 }
