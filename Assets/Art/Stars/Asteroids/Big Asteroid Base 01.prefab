@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4241663994058794}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Big Asteroid Base 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4633364783710614}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Big Asteroid Base 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4383573840380758}
   - component: {fileID: 33731529445464332}
   - component: {fileID: 23702634492258284}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Asteroid_Base_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

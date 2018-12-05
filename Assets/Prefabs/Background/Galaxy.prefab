@@ -65,18 +65,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starsHeight: -180
-  asteroidsHeight: -75
+  asteroidsHeight: -100
   planetsHeight: -120
   offset: 10
-  maxStars: 150
+  maxStars: 300
   maxAsteroids: 30
-  maxQuads: 20
+  maxQuads: 30
   stars:
   - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 2}
   - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 2}
   - {fileID: 1832912916859312, guid: 6899e65381a47fa4a9404fdcdf0769fe, type: 2}
   - {fileID: 1494264238544456, guid: 6d913173afd537b4595cb75aef3b2f8e, type: 2}
   - {fileID: 1460519080176366, guid: 938c5120db6e99b458cdd989d60d64d4, type: 2}
+  - {fileID: 1905068224687518, guid: b67fd6c651898f04cb8674ca65ebbb3d, type: 2}
+  - {fileID: 1528770179305256, guid: 9f5004ad9d6deea4cafa7b9a0b63c31d, type: 2}
   asteroids:
   - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 2}
   - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 2}

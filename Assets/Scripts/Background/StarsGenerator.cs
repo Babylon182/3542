@@ -42,7 +42,7 @@ public class StarsGenerator : MonoBehaviour
                 gameObject.transform.position.z + Screen.height + 50));
 
 
-            var currentStar = Instantiate(stars[_starsRandomCode], starPos, Quaternion.Euler(90,0,0));
+            var currentStar = Instantiate(stars[_starsRandomCode], starPos, Quaternion.Euler(90,0, Random.Range(0, 350)));
             currentStar.transform.parent = gameObject.transform;
         }
         /////////////////////////////////ASTEROIDS
