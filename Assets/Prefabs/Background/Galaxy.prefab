@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051b9adef5d31da4fb0f8f4fef5c2d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 45
 --- !u!114 &114736197835122818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b9eb7adac4c9e449016bc3267c792a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starsHeight: -180
-  asteroidsHeight: -100
-  planetsHeight: -120
+  starsHeight: -220
+  asteroidsHeight: -180
+  planetsHeight: -200
   offset: 10
   maxStars: 300
   maxAsteroids: 30
