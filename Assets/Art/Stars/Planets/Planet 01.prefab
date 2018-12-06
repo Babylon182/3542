@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4160223253421108}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Planet 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4694325869059372}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Planet 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4336471820628414}
   - component: {fileID: 33890609929646280}
   - component: {fileID: 23531689455959380}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Planet_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

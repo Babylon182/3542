@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4130920539819852}
   - component: {fileID: 33817672281700846}
   - component: {fileID: 23857834742097254}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4049556818600352}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Big Asteroid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4915942448528830}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Big Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
