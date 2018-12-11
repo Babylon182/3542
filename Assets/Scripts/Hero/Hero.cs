@@ -64,7 +64,7 @@ public class Hero : EntityMovement, ICanCollide
 #if UNITY_EDITOR
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 #elif UNITY_ANDROID || UNITY_IOS
-        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0));
+        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 #endif
         
         float enter = 0.0f;
