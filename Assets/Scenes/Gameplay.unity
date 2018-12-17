@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24494747cf8c4e4ca41d5ad39268510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  makeDictionary: []
+  prefabsDictionary: {fileID: 11400000, guid: d6748b61da9370649b8581c1485d6b48, type: 2}
 --- !u!4 &86025614
 Transform:
   m_ObjectHideFlags: 0

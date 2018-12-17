@@ -11,4 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f109a62d95b1458bb23965e6e6aa4e0a, type: 3}
   m_Name: PrefabsDictionary
   m_EditorClassIdentifier: 
-  dictionary: []
+  dictionary:
+  - id: 0
+    prefab: {fileID: 100000, guid: a1008b346f4fede40b09bacce218ef9d, type: 3}
+  - id: 0
+    prefab: {fileID: 100000, guid: a1008b346f4fede40b09bacce218ef9d, type: 3}
+  - id: 0
+    prefab: {fileID: 100000, guid: a1008b346f4fede40b09bacce218ef9d, type: 3}
+  - id: 0
+    prefab: {fileID: 100000, guid: a1008b346f4fede40b09bacce218ef9d, type: 3}
+  - id: 0
+    prefab: {fileID: 100000, guid: a1008b346f4fede40b09bacce218ef9d, type: 3}
