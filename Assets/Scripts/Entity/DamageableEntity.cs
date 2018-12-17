@@ -8,10 +8,7 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     [SerializeField] private float radiusSize;
     
     protected CollisionDetectorManager collisionDetectorManager;
-    
-    [Zenject.Inject]
-    private IPool pool;
-
+   
     public EntityType Afiliation => afiliation;
     public float RadiusSize => radiusSize;
     
@@ -33,7 +30,7 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
         life.Value -= damage;
         if (life.Value <= 0)
         {
-            pool.Destroy(this.gameObject);
+            GodPoolSingleton.Instance.Destroy(this.gameObject);
         }
     }
 

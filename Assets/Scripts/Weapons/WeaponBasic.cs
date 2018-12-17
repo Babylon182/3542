@@ -1,10 +1,9 @@
-﻿public class WeaponBasic : Weapon
+﻿using CalongeCore.ObjectsPool;
+
+public class WeaponBasic : Weapon
 {
-    [Zenject.Inject]
-    private IPool pool;
-    
     protected override void CreateBullet()
     {
-        pool.Instantiate(weaponData.bullet.gameObject, transform.position,transform.rotation);
+        GodPoolSingleton.Instance.Instantiate(weaponData.bullet.gameObject, transform.position,transform.rotation);
     }
 }

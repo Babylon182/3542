@@ -1,13 +1,11 @@
 ﻿using System.Collections;
+using CalongeCore.ObjectsPool;
 using UnityEngine;
 
 public class DestroyByTime : MonoBehaviour
 {
 	[SerializeField]
 	private float timer;
-	
-	[Zenject.Inject]
-	private IPool pool;
 
 	private void OnEnable()
 	{
@@ -17,6 +15,6 @@ public class DestroyByTime : MonoBehaviour
 	IEnumerator StartTimer()
 	{
 		yield return new WaitForSeconds(timer);
-		pool.Destroy(gameObject);
+		GodPoolSingleton.Instance.Destroy(gameObject);
 	}
 }

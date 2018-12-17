@@ -1,23 +1,24 @@
 ﻿using System.Collections;
+using CalongeCore.ObjectsPool;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject testingEnemy;
-    [SerializeField] private int numberOfLanes;
-    [SerializeField] private float spawnRate;
-
-    [Zenject.Inject]
-    private Boundaries boundaries;
-
-    [Zenject.Inject]
-    private IPool pool;
+    [SerializeField] 
+    private GameObject testingEnemy;
     
+    [SerializeField] 
+    private int numberOfLanes;
+    
+    [SerializeField] 
+    private float spawnRate;
+    
+    private Boundaries boundaries;
     private float[] spawningPositions; 
 
     private void Awake()
     {
-        boundaries.GetBoundaries();
+        boundaries = new Boundaries();
         spawningPositions = new float[numberOfLanes];
         GetSpawningPositions();
     }
@@ -45,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         var spawnPosition = transform.position;
         spawnPosition.x = spawningPositions[random];
         
-        pool.Instantiate(testingEnemy, spawnPosition , transform.rotation);
+        GodPoolSingleton.Instance.Instantiate(testingEnemy, spawnPosition , transform.rotation);
     }
 
     private IEnumerator SpawnEnemies()

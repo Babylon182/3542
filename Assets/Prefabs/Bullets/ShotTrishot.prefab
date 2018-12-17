@@ -54,6 +54,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4090716047580184}
+  - component: {fileID: 114971402838155522}
+  - component: {fileID: 114014269854857880}
   m_Layer: 0
   m_Name: ShotTrishot
   m_TagString: Untagged
@@ -242,6 +244,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114014269854857880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811192705112802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578aef78694985640a0671910c6c47a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
+--- !u!114 &114971402838155522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811192705112802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3d7c643ba84ac096965e6cc781214b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  afiliation: 0
+  speed: 25
+  damage: 5
+  radiusSize: 0.2
 --- !u!198 &198886406165270710
 ParticleSystem:
   m_ObjectHideFlags: 1
