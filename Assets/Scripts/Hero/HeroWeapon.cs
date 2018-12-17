@@ -2,10 +2,16 @@
 
 public class HeroWeapon : MonoBehaviour
 {
-    public Weapon weapon;
+    public Weapon weaponPrimary;
+    public Weapon weaponSecondary;
 
-    public void Fire()
+    public void FirePrimary()
     {
-        weapon.Fire();
+        weaponPrimary.Fire();
+    }
+    
+    public void FireSecondary()
+    {
+        weaponSecondary.Fire();
     }
 }

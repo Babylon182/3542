@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb7f85bbb41d8ec4d950969855d2c39e, type: 3}
-  m_Name: BasicWeapon
+  m_Name: BasicSecondaryWeapon
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114522829310402642, guid: f07419e14184d8a4985ab1274652d5e9, type: 2}
-  weaponType: 0
-  rateOfFire: 0.5
+  bullet: {fileID: 114971402838155522, guid: ee485decf5566344a9ae9672e8d64c0b, type: 2}
+  weaponType: 1
+  rateOfFire: 5

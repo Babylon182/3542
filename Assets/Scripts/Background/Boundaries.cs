@@ -8,7 +8,7 @@ public class Boundaries
     public float TopBoundary { get; private set; }
     public float BottomBoundary { get; private set; }
 
-    public void GetBoundaries()
+    public Boundaries()
     {
         var mainCamera = Camera.main;
         var leftCoordinates = new Vector3(0, 0, mainCamera.transform.position.y);
@@ -19,6 +19,6 @@ public class Boundaries
         TopBoundary = mainCamera.ViewportToWorldPoint(rightCoordinates).z;
         BottomBoundary = mainCamera.ViewportToWorldPoint(leftCoordinates).z;
 
-        Width = RightBoundary - LeftBoundary;   
+        Width = RightBoundary - LeftBoundary;  
     }
 }

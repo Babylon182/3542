@@ -7,9 +7,7 @@ public class Hero : EntityMovement, ICanCollide
     [SerializeField]
     protected EntityType afiliation;
 
-    [Zenject.Inject] 
     private Boundaries boundaries;
-
     private Vector2 sideLimits;
     private Vector2 frontLimits;
     private HeroWeapon heroWeapon;
@@ -20,7 +18,8 @@ public class Hero : EntityMovement, ICanCollide
 
     private void Awake()
     {
-        InputController.Initialize(); //TODO Buscar una MUCHA mejor manera de llamar a esto. LIKE INJECT pero cuando tenga ganas
+        boundaries = new Boundaries();
+        InputController.Initialize(); //TODO Buscar una MUCHA mejor manera de llamar a esto. 
         heroWeapon = gameObject.GetComponent<HeroWeapon>();
     }
 
@@ -77,9 +76,11 @@ public class Hero : EntityMovement, ICanCollide
 
     private void ShootInputs()
     {
+        heroWeapon.FirePrimary();
+        
         if (InputController.GetKey(GameInputs.Fire))
         {
-            heroWeapon.Fire();
+            heroWeapon.FireSecondary();
         }
     }
 }

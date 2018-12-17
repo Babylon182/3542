@@ -10,16 +10,13 @@ public abstract class Bullet : MonoBehaviour , ICanCollide, IPoolable
     
     private CollisionDetectorManager collisionDetectorManager;
 
-    [Zenject.Inject]
-    private IPool pool;
-
     public EntityType Afiliation => afiliation;
     public float RadiusSize => radiusSize;
     public float Damage => damage;
 
     public void GotDamaged(float damaged)
     {
-        pool.Destroy(this.gameObject);
+        GodPoolSingleton.Instance.Destroy(this.gameObject);
     }
 
     protected abstract void Movement();

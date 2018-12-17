@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class CollisionDetectorManager : MonoBehaviour
 {
+	private Hero hero;
 	private HashSet<Bullet> allBullets = new HashSet<Bullet>();
 	private HashSet<DamageableEntity> allDamageableEntities = new HashSet<DamageableEntity>();
 	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
-
     private IEnumerable<ICanCollide> bulletsThatCollide;
-	
-	[Zenject.Inject]
-	private Hero hero;
 
 	private void Awake()
+	{
+		hero = FindObjectOfType<Hero>();
+	}
+
+	private void Start()
 	{
 		bulletsThatCollide = allBullets.Where(bullet =>
 		{
