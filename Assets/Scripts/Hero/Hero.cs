@@ -11,7 +11,6 @@ public class Hero : EntityMovement
     private HeroWeapon heroWeapon;
     private DamageableEntity damageableEntity;
 
-
     private void Awake()
     {
         damageableEntity = GetComponent<DamageableEntity>();
@@ -26,6 +25,8 @@ public class Hero : EntityMovement
 
         sideLimits = new Vector2(boundaries.LeftBoundary + radiusSize, boundaries.RightBoundary - radiusSize);
         frontLimits = new Vector2(boundaries.BottomBoundary + radiusSize, boundaries.TopBoundary - radiusSize);
+
+        damageableEntity.onDamage += OnHeroDamage;
     }
 
     private void Update()
@@ -33,7 +34,7 @@ public class Hero : EntityMovement
         HeroInputs();
     }
 
-    public void GotDamaged(float damage = 0)
+    private void OnHeroDamage()
     {
         transform.position = Vector3.zero;
         EventsManager.DispatchEvent(new HeroDamaged());
