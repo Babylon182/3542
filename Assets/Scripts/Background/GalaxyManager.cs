@@ -8,7 +8,9 @@ public class GalaxyManager : MonoBehaviour
 
     void Awake()
     {
-        var newGal = Instantiate(galaxy, new Vector3(0, -180, Screen.height + Screen.height / 2), Quaternion.identity);
+        var boundaries = new Boundaries();
+
+        var newGal = Instantiate(galaxy, new Vector3(boundaries.LeftBoundary + (boundaries.LeftBoundary + boundaries.RightBoundary) / 2, 0, boundaries.TopBoundary), Quaternion.identity);
         galaxies.Add(newGal);
     }
 

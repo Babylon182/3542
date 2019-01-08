@@ -29,11 +29,13 @@ public class EnemySpawner : MonoBehaviour
     private void GetSpawningPositions()
     {
         var boundaries = new Boundaries();
-        var spawnerPosition = transform.position;
+        var thisTransform = transform;
+        
+        var spawnerPosition = thisTransform.position;
         spawnerPosition.z = boundaries.TopBoundary;
         spawnerPosition.x = boundaries.LeftBoundary + (boundaries.LeftBoundary + boundaries.RightBoundary) / 2;
         
-        transform.position = spawnerPosition;
+        thisTransform.position = spawnerPosition;
         
         for (int index = 0, length = spawningPositions.Length; index < length; index++)
         {

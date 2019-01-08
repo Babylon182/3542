@@ -1,4 +1,6 @@
 ﻿using CalongeCore.Events;
+using CalongeCore.ParticleManager;
+using CalongeCore.SoundManager;
 using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,12 +12,16 @@ public class Hero : EntityMovement
     private Vector2 frontLimits;
     private HeroWeapon heroWeapon;
     private DamageableEntity damageableEntity;
+    private Camera mainCamera;
 
     private void Awake()
     {
+        mainCamera = Camera.main;
         damageableEntity = GetComponent<DamageableEntity>();
         InputController.Initialize(); //TODO Buscar una MUCHA mejor manera de llamar a esto. 
         heroWeapon = gameObject.GetComponent<HeroWeapon>();
+        damageableEntity.onDeath += () => EventsManager.DispatchEvent(new ParticleEvent(PrefabID.HeroDeath, transform.position, Quaternion.identity));
+        damageableEntity.onDeath += () => EventsManager.DispatchEvent(new SoundEvent(SoundID.HeroDeath, transform.position));
     }
 
     private void Start()
@@ -64,7 +70,7 @@ public class Hero : EntityMovement
         if (!EventSystem.current.IsPointerOverGameObject(-1))
         {
             var plane = new Plane(Vector3.up, transform.position);
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             float enter = 0.0f;
             if (plane.Raycast(ray, out enter))
             {

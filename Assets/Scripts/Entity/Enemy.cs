@@ -1,5 +1,6 @@
 ﻿using CalongeCore.Events;
 using CalongeCore.ParticleManager;
+using CalongeCore.SoundManager;
 using UnityEngine;
 
 [RequireComponent(typeof(DamageableEntity))]
@@ -9,6 +10,7 @@ public class Enemy : EntityMovement
     {
         var damageableEntity = GetComponent<DamageableEntity>();
         damageableEntity.onDeath += () => EventsManager.DispatchEvent(new ParticleEvent(PrefabID.EnemyDeath, transform.position, Quaternion.identity));
+        damageableEntity.onDeath += () => EventsManager.DispatchEvent(new SoundEvent(SoundID.EnemyDeath, transform.position));
     }
 
     public override void Move(Vector3 destination)
