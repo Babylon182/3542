@@ -1,4 +1,5 @@
-﻿using CalongeCore.ObjectsPool;
+﻿using System;
+using CalongeCore.ObjectsPool;
 using UnityEngine;
 
 public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
@@ -6,6 +7,8 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     [SerializeField] protected EntityType afiliation;
     [SerializeField] private FloatReference life;
     [SerializeField] private float radiusSize;
+    public Action onDamage;
+    public Action onDeath;
     
     protected CollisionDetectorManager collisionDetectorManager;
    
@@ -14,9 +17,12 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     
     public virtual void Awake()
     {
-        // ------Testing
+        // ------Testing --- TODO Service Alocator
         collisionDetectorManager = FindObjectOfType<CollisionDetectorManager>();
         // -------------
+        
+        onDamage += () => { };
+        onDeath += () => { };
     }
     
     private void OnDrawGizmos()
@@ -25,11 +31,13 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
         Gizmos.DrawWireSphere(transform.position , radiusSize);
     }
 
-    public void GotDamaged(float damage)
+    public void GotDamaged(float damage = 1)
     {
         life.Value -= damage;
+        onDamage.Invoke();
         if (life.Value <= 0)
         {
+            onDeath.Invoke();
             GodPoolSingleton.Instance.Destroy(this.gameObject);
         }
     }

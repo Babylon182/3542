@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CollisionDetectorManager : MonoBehaviour
 {
-	private Hero hero;
+	private DamageableEntity hero;
 	private HashSet<Bullet> allBullets = new HashSet<Bullet>();
 	private HashSet<DamageableEntity> allDamageableEntities = new HashSet<DamageableEntity>();
 	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
@@ -13,7 +13,7 @@ public class CollisionDetectorManager : MonoBehaviour
 
 	private void Awake()
 	{
-		hero = FindObjectOfType<Hero>();
+		hero = FindObjectOfType<Hero>().GetComponent<DamageableEntity>();
 	}
 
 	private void Start()

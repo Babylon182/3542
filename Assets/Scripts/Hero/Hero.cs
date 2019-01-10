@@ -1,32 +1,38 @@
-﻿using UnityEngine;
+﻿using CalongeCore.Events;
+using CalongeCore.ParticleManager;
+using CalongeCore.SoundManager;
+using Events;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Hero : EntityMovement, ICanCollide
+[RequireComponent(typeof(DamageableEntity))]
+public class Hero : EntityMovement
 {
-    [SerializeField] 
-    private float radiusSize;
-    [SerializeField]
-    protected EntityType afiliation;
-
-    private Boundaries boundaries;
     private Vector2 sideLimits;
     private Vector2 frontLimits;
     private HeroWeapon heroWeapon;
-
-    public float RadiusSize => radiusSize;
-    public EntityType Afiliation => afiliation;
-
+    private DamageableEntity damageableEntity;
+    private Camera mainCamera;
 
     private void Awake()
     {
-        boundaries = new Boundaries();
+        mainCamera = Camera.main;
+        damageableEntity = GetComponent<DamageableEntity>();
         InputController.Initialize(); //TODO Buscar una MUCHA mejor manera de llamar a esto. 
         heroWeapon = gameObject.GetComponent<HeroWeapon>();
+        damageableEntity.onDeath += () => EventsManager.DispatchEvent(new ParticleEvent(PrefabID.HeroDeath, transform.position, Quaternion.identity));
+        damageableEntity.onDeath += () => EventsManager.DispatchEvent(new SoundEvent(SoundID.HeroDeath, transform.position));
     }
 
     private void Start()
     {
+        var radiusSize = damageableEntity.RadiusSize;
+        var boundaries = new Boundaries();
+
         sideLimits = new Vector2(boundaries.LeftBoundary + radiusSize, boundaries.RightBoundary - radiusSize);
         frontLimits = new Vector2(boundaries.BottomBoundary + radiusSize, boundaries.TopBoundary - radiusSize);
+
+        damageableEntity.onDamage += OnHeroDamage;
     }
 
     private void Update()
@@ -34,15 +40,10 @@ public class Hero : EntityMovement, ICanCollide
         HeroInputs();
     }
 
-    private void HeroInputs()
-    {
-        MovementInputs();
-        ShootInputs();
-    }
-
-    public void GotDamaged(float damage = 0)
+    private void OnHeroDamage()
     {
         transform.position = Vector3.zero;
+        EventsManager.DispatchEvent(new HeroDamaged());
     }
 
     public override void Move(Vector3 destination)
@@ -56,31 +57,68 @@ public class Hero : EntityMovement, ICanCollide
         transform.position = Vector3.MoveTowards(transform.position , destination, speed * Time.deltaTime);
     }
 
+    private void HeroInputs()
+    {
+        MovementInputs();
+        ShootInputs();
+    }
+
     private void MovementInputs()
     {
-        var plane = new Plane(Vector3.up, transform.position);
-        
+            
 #if UNITY_EDITOR
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-#elif UNITY_ANDROID || UNITY_IOS
-        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-#endif
-        
-        float enter = 0.0f;
-        if (plane.Raycast(ray, out enter))
+        if (!EventSystem.current.IsPointerOverGameObject(-1))
         {
-            Vector3 hitPoint = ray.GetPoint(enter);
-            Move(hitPoint);
+            var plane = new Plane(Vector3.up, transform.position);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            float enter = 0.0f;
+            if (plane.Raycast(ray, out enter))
+            {
+                Vector3 hitPoint = ray.GetPoint(enter);
+                Move(hitPoint);
+            }
         }
+#elif UNITY_ANDROID || UNITY_IOS
+        if (!EventSystem.current.IsPointerOverGameObject(0))
+        {
+            var plane = new Plane(Vector3.up, transform.position);
+            
+
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+
+            
+            float enter = 0.0f;
+            if (plane.Raycast(ray, out enter))
+            {
+                Vector3 hitPoint = ray.GetPoint(enter);
+                Move(hitPoint);
+            }
+        }
+#endif
+            
+        
     }
 
     private void ShootInputs()
     {
         heroWeapon.FirePrimary();
         
+#if UNITY_EDITOR
         if (InputController.GetKey(GameInputs.Fire))
         {
             heroWeapon.FireSecondary();
         }
+#endif
     }
 }
+
+/*
+ private bool IsPointerOverUIObject() {
+     PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+     eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+     List<RaycastResult> results = new List<RaycastResult>();
+     EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+     return results.Count > 0;
+ }
+*/

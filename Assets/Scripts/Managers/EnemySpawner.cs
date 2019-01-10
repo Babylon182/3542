@@ -13,12 +13,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] 
     private float spawnRate;
     
-    private Boundaries boundaries;
     private float[] spawningPositions; 
 
     private void Awake()
     {
-        boundaries = new Boundaries();
         spawningPositions = new float[numberOfLanes];
         GetSpawningPositions();
     }
@@ -30,6 +28,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void GetSpawningPositions()
     {
+        var boundaries = new Boundaries();
+        var thisTransform = transform;
+        
+        var spawnerPosition = thisTransform.position;
+        spawnerPosition.z = boundaries.TopBoundary;
+        spawnerPosition.x = boundaries.LeftBoundary + (boundaries.LeftBoundary + boundaries.RightBoundary) / 2;
+        
+        thisTransform.position = spawnerPosition;
+        
         for (int index = 0, length = spawningPositions.Length; index < length; index++)
         {
             // Magia matematica de Guido Calonge.
