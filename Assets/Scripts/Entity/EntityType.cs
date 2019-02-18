@@ -3,3 +3,10 @@
     Hero,
     Enemy
 }
+
+public enum EnemyType
+{
+    Small,
+    Medium,
+    Large
+}
