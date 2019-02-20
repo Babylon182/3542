@@ -877,6 +877,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1735520103355146, guid: 92a54de6bc6752e4b8e605b3e4425b7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224318658957318830, guid: 92a54de6bc6752e4b8e605b3e4425b7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1879,6 +1883,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1865879908055952, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_Name
+      value: GUI Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 224947638260876206, guid: e0745a2306e248946800c1fe1c424dc5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1918,6 +1926,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224947638260876206, guid: e0745a2306e248946800c1fe1c424dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224947638260876206, guid: e0745a2306e248946800c1fe1c424dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224947638260876206, guid: e0745a2306e248946800c1fe1c424dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224947638260876206, guid: e0745a2306e248946800c1fe1c424dc5,
         type: 3}
@@ -1969,10 +1992,29 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114604067873162710, guid: e0745a2306e248946800c1fe1c424dc5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Gameplay
+    - target: {fileID: 1648405315, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648405315, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398536697, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398536697, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648405317, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648405317, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0745a2306e248946800c1fe1c424dc5, type: 3}
