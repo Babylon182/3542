@@ -1,5 +1,4 @@
 using System;
-using CalongeCore.ParticleManager;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemiesDictionary")]

@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesDictionary: {fileID: 11400000, guid: deec1161502b05243a007576735bacff, type: 2}
-  numberOfLanes: 1
+  roundsDictionary: {fileID: 11400000, guid: 10dbae945cc14a14fb20ee8c99dfc254, type: 2}
+  initialOffset: 5

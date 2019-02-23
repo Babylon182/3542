@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CalongeCore.ObjectsPool;
 using MEC;
 using UnityEngine;
@@ -10,11 +9,15 @@ public class SpawnerManager : Singleton<SpawnerManager>
     private EnemiesDictionary enemiesDictionary;
     
     [SerializeField] 
-    private Round[] gameRounds;
+    private RoundsDictionary roundsDictionary;
+
+    [SerializeField] 
+    private float initialOffset;
     
     private Dictionary<EnemyType, GameObject> allEnemies = new Dictionary<EnemyType, GameObject>();
     private float[] spawningPositions;
     private int currentRoundIndex;
+    private int currentWaveIndex;
 
     protected override void Awake()
     {
@@ -48,7 +51,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
         var thisTransform = transform;
         
         var spawnerPosition = thisTransform.position;
-        spawnerPosition.z = boundaries.TopBoundary;
+        spawnerPosition.z = boundaries.TopBoundary + initialOffset;
         spawnerPosition.x = boundaries.LeftBoundary + (boundaries.LeftBoundary + boundaries.RightBoundary) / 2;
         
         thisTransform.position = spawnerPosition;
@@ -66,12 +69,17 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
     private void SpawnEnemy(Round round)
     {
-        var wave = round.waves[round.currentWaveIndex];
+        var wave = round.waves[currentWaveIndex];
         var spawnPosition = transform.position;
         spawnPosition.x = spawningPositions[(int) wave.spawningLane];
         
-        var enemySpawned = GodPoolSingleton.Instance.Instantiate(allEnemies[wave.enemyType].gameObject, spawnPosition , transform.rotation);
-        enemySpawned.GetComponent<Enemy>().SelectPath(wave.spawningLane);
+        Enemy enemySpawned = GodPoolSingleton.Instance.Instantiate<Enemy>(allEnemies[wave.enemyType].gameObject, spawnPosition , transform.rotation);
+        enemySpawned.SelectPath(wave.spawningLane);
+    }
+
+    private void ResetRounds()
+    {
+        currentWaveIndex = currentRoundIndex = 0;
     }
 
     private IEnumerator<float> SpawnRound()
@@ -80,50 +88,28 @@ public class SpawnerManager : Singleton<SpawnerManager>
         
         while (true)
         {
-            var round = gameRounds[currentRoundIndex];
+            Round round = roundsDictionary.gameRounds[currentRoundIndex];
+            Wave currentWave = round.waves[currentWaveIndex];
             SpawnEnemy(round);
-            yield return Timing.WaitForSeconds(round.CurrentWave.spawnRate);
+            yield return Timing.WaitForSeconds(currentWave.spawnRate);
             unitsSpawned++;
-
-            if (unitsSpawned > round.CurrentWave.amountOfEnemies)
+            
+            // Check if the amount of units reach the amount of the wave 
+            if (unitsSpawned >= currentWave.amountOfEnemies)
             {
                 unitsSpawned = 0;
-                round.currentWaveIndex++;
-
-                if (round.currentWaveIndex >= round.waves.Length)
+                currentWaveIndex++;
+                
+                // Wait for the next wave
+                yield return Timing.WaitForSeconds(currentWave.timeForNextWave);
+                
+                // If we are at the end of the rounds, start again
+                if (currentWaveIndex >= round.waves.Length && 
+                    ++currentRoundIndex >= roundsDictionary.gameRounds.Length)
                 {
-                    currentRoundIndex++;
+                    ResetRounds();
                 }
             }
         }
     }
-}
-
-public enum SpawningLane
-{
-    Left,
-    Center,
-    Right,
-    AmountOfLanes
-}
-
-[Serializable]
-public class Round
-{
-    public Wave[] waves;
-    
-    [HideInInspector]
-    public int currentWaveIndex;
-
-    public Wave CurrentWave => waves[currentWaveIndex];
-}
-
-[Serializable]
-public struct Wave
-{
-    public EnemyType enemyType;
-    public SpawningLane spawningLane;
-    public int amountOfEnemies;
-    public float spawnRate;
-    public float timeForNextWave;
 }
