@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CollisionDetectorManager : MonoBehaviour
+public class CollisionDetectorManager : Singleton<CollisionDetectorManager>
 {
 	private DamageableEntity hero;
 	private HashSet<Bullet> allBullets = new HashSet<Bullet>();
@@ -11,8 +11,9 @@ public class CollisionDetectorManager : MonoBehaviour
 	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
     private IEnumerable<ICanCollide> bulletsThatCollide;
 
-	private void Awake()
+    protected override void Awake()
 	{
+		base.Awake();
 		hero = FindObjectOfType<Hero>().GetComponent<DamageableEntity>();
 	}
 
