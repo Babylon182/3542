@@ -40,7 +40,7 @@ public class StarsGenerator : MonoBehaviour
         {
             _starsRandomCode = (int)Random.Range(0,stars.Count);
 
-            starPos = new Vector3(Random.Range(-Screen.width/2, Screen.width/2), 
+            starPos = new Vector3(Random.Range(-Screen.width/4, Screen.width/4), 
                 Random.Range(starsHeight + offset, starsHeight - offset), 
                 Random.Range(gameObject.transform.position.z -Screen.height - 50, 
                 gameObject.transform.position.z + Screen.height + 50));
@@ -56,7 +56,7 @@ public class StarsGenerator : MonoBehaviour
         {
             _asteroidsRandomCode = (int)Random.Range(0, asteroids.Count);
 
-            asteroidPos = new Vector3(Random.Range(-Screen.width / 2, Screen.width / 2),
+            asteroidPos = new Vector3(Random.Range(-Screen.width / 4, Screen.width / 4),
                 Random.Range(asteroidsHeight + offset, asteroidsHeight - offset),
                 Random.Range(gameObject.transform.position.z - Screen.height - 50,
                 gameObject.transform.position.z + Screen.height + 50));
@@ -72,7 +72,7 @@ public class StarsGenerator : MonoBehaviour
         {
             _quadRandomCode = (int)Random.Range(0, planets.Count);
 
-            quadPos = new Vector3(Random.Range(-Screen.width / 2, Screen.width/2),
+            quadPos = new Vector3(Random.Range(-Screen.width / 4, Screen.width / 4),
                 Random.Range (planetsHeight + offset, planetsHeight - offset), 
                 Random.Range(gameObject.transform.position.z - Screen.height, 
                 gameObject.transform.position.z + Screen.height));
@@ -87,7 +87,7 @@ public class StarsGenerator : MonoBehaviour
         {
             _nebulasRandomCode = (int)Random.Range(0, nebulas.Count);
 
-            nebulasPos = new Vector3(Random.Range(-Screen.width / 2, Screen.width / 2),
+            nebulasPos = new Vector3(Random.Range(-Screen.width / 4, Screen.width / 4),
                 Random.Range(nebulasHeight + offset, nebulasHeight - offset),
                 Random.Range(gameObject.transform.position.z - Screen.height,
                 gameObject.transform.position.z + Screen.height));

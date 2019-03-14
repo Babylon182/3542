@@ -48,19 +48,20 @@ MonoBehaviour:
   asteroidsHeight: -180
   planetsHeight: -200
   nebulasHeight: -250
-  offset: 10
-  maxStars: 300
-  maxAsteroids: 30
-  maxPlanets: 5
-  maxNebulas: 10
+  offset: 40
+  maxStars: 200
+  maxAsteroids: 60
+  maxPlanets: 20
+  maxNebulas: 20
   stars:
+  - {fileID: 2030629431631109370, guid: 18612057baabb4c4ab3656fa6be091e2, type: 3}
+  - {fileID: 4476207994701358065, guid: 86add43c9c8506340ae5e21b0a1c0725, type: 3}
+  - {fileID: 2341809496902527058, guid: 0b866a908c9dafa48a14c1948b1406a6, type: 3}
+  - {fileID: 5587686779947252083, guid: 53df5c3ad06916447815d2b5b726203c, type: 3}
   - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 3}
   - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 3}
   - {fileID: 1832912916859312, guid: 6899e65381a47fa4a9404fdcdf0769fe, type: 3}
   - {fileID: 1494264238544456, guid: 6d913173afd537b4595cb75aef3b2f8e, type: 3}
-  - {fileID: 1460519080176366, guid: 938c5120db6e99b458cdd989d60d64d4, type: 3}
-  - {fileID: 1905068224687518, guid: b67fd6c651898f04cb8674ca65ebbb3d, type: 3}
-  - {fileID: 1528770179305256, guid: 9f5004ad9d6deea4cafa7b9a0b63c31d, type: 3}
   asteroids:
   - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 3}
   - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 3}
@@ -81,6 +82,9 @@ MonoBehaviour:
   - {fileID: 3058412980898193330, guid: 2417fbd28fb707b40a0521d868311139, type: 3}
   - {fileID: 3986703494277793015, guid: 5b3f368ac4d9fa1429224eed13057bc4, type: 3}
   - {fileID: 6264508331027378212, guid: 9fd0d7d40a78f3349b23ca1ecec2bde1, type: 3}
+  - {fileID: 4063967518126270210, guid: ddc64f7c121ad6b48bffc8122628d192, type: 3}
+  - {fileID: 4409117049028511648, guid: 5232f4b4b8fa27546a113432a9f5f4f2, type: 3}
+  - {fileID: 1543157069080698054, guid: 4483ebd0799afbd48bb14b9ec6960fe3, type: 3}
 --- !u!114 &114504932005003244
 MonoBehaviour:
   m_ObjectHideFlags: 0
