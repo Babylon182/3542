@@ -1,21 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1713942581300216}
-  m_IsPrefabAsset: 1
 --- !u!1 &1713942581300216
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4108088516876398}
@@ -30,9 +20,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4108088516876398
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713942581300216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -180, z: 0}
@@ -41,23 +32,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114504932005003244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1713942581300216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051b9adef5d31da4fb0f8f4fef5c2d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 45
 --- !u!114 &114736197835122818
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713942581300216}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -67,29 +47,54 @@ MonoBehaviour:
   starsHeight: -220
   asteroidsHeight: -180
   planetsHeight: -200
-  offset: 10
-  maxStars: 300
-  maxAsteroids: 30
-  maxQuads: 30
+  nebulasHeight: -250
+  offset: 40
+  maxStars: 200
+  maxAsteroids: 60
+  maxPlanets: 20
+  maxNebulas: 20
   stars:
-  - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 2}
-  - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 2}
-  - {fileID: 1832912916859312, guid: 6899e65381a47fa4a9404fdcdf0769fe, type: 2}
-  - {fileID: 1494264238544456, guid: 6d913173afd537b4595cb75aef3b2f8e, type: 2}
-  - {fileID: 1460519080176366, guid: 938c5120db6e99b458cdd989d60d64d4, type: 2}
-  - {fileID: 1905068224687518, guid: b67fd6c651898f04cb8674ca65ebbb3d, type: 2}
-  - {fileID: 1528770179305256, guid: 9f5004ad9d6deea4cafa7b9a0b63c31d, type: 2}
+  - {fileID: 2030629431631109370, guid: 18612057baabb4c4ab3656fa6be091e2, type: 3}
+  - {fileID: 4476207994701358065, guid: 86add43c9c8506340ae5e21b0a1c0725, type: 3}
+  - {fileID: 2341809496902527058, guid: 0b866a908c9dafa48a14c1948b1406a6, type: 3}
+  - {fileID: 5587686779947252083, guid: 53df5c3ad06916447815d2b5b726203c, type: 3}
+  - {fileID: 1476862269870020, guid: cb6a474f35d40804787acdd12aeb9d29, type: 3}
+  - {fileID: 1653146713125038, guid: c8ef200b2f9198f429ce13c3d5dc1e50, type: 3}
+  - {fileID: 1832912916859312, guid: 6899e65381a47fa4a9404fdcdf0769fe, type: 3}
+  - {fileID: 1494264238544456, guid: 6d913173afd537b4595cb75aef3b2f8e, type: 3}
   asteroids:
-  - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 2}
-  - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 2}
-  - {fileID: 1201599644208732, guid: f076f0ebe8ebf0d47993c812e3b6458a, type: 2}
-  - {fileID: 1843366029334282, guid: a24b714e41060d8429b025afe9067fd8, type: 2}
-  - {fileID: 1391238425633350, guid: 3a6613c2659a0d64191fd56765bf2611, type: 2}
-  - {fileID: 1932103351723358, guid: 0b23aed072879f048bd6721adca0bbd4, type: 2}
-  quads:
-  - {fileID: 1103843851376690, guid: 6a9fd257b1a9f864cac1a5f04278b34a, type: 2}
-  - {fileID: 1073415533664576, guid: b51370c7d0cbe05408289eaf9cf020c0, type: 2}
-  - {fileID: 1210914537460188, guid: 4e71754f6cde6fd48aa59b250b6a3fe7, type: 2}
-  - {fileID: 1807676780288366, guid: 1f2a815e5a96a3d49a69b890191413ef, type: 2}
-  - {fileID: 1481977525938038, guid: 6f05ee635e6d8f048b3c6c2e15510c66, type: 2}
-  - {fileID: 1325152828449260, guid: 4f62e8ea4fa2db54d9d3a52357000e09, type: 2}
+  - {fileID: 1315807202168828, guid: abc4368223471e745865a1c791eba942, type: 3}
+  - {fileID: 1840074751414600, guid: 0dc70b0fa31464d4b8aae9ff1f5ad661, type: 3}
+  - {fileID: 1201599644208732, guid: f076f0ebe8ebf0d47993c812e3b6458a, type: 3}
+  - {fileID: 1843366029334282, guid: a24b714e41060d8429b025afe9067fd8, type: 3}
+  - {fileID: 1391238425633350, guid: 3a6613c2659a0d64191fd56765bf2611, type: 3}
+  - {fileID: 1932103351723358, guid: 0b23aed072879f048bd6721adca0bbd4, type: 3}
+  planets:
+  - {fileID: 1103843851376690, guid: 6a9fd257b1a9f864cac1a5f04278b34a, type: 3}
+  - {fileID: 1073415533664576, guid: b51370c7d0cbe05408289eaf9cf020c0, type: 3}
+  - {fileID: 1210914537460188, guid: 4e71754f6cde6fd48aa59b250b6a3fe7, type: 3}
+  - {fileID: 1807676780288366, guid: 1f2a815e5a96a3d49a69b890191413ef, type: 3}
+  - {fileID: 1481977525938038, guid: 6f05ee635e6d8f048b3c6c2e15510c66, type: 3}
+  - {fileID: 1325152828449260, guid: 4f62e8ea4fa2db54d9d3a52357000e09, type: 3}
+  nebulas:
+  - {fileID: 4837168610136399499, guid: e03d567f2f8047444bd1b7c46d5f93bd, type: 3}
+  - {fileID: 2858372098429004359, guid: 52458080df19fc44888dba7c4465e72b, type: 3}
+  - {fileID: 3058412980898193330, guid: 2417fbd28fb707b40a0521d868311139, type: 3}
+  - {fileID: 3986703494277793015, guid: 5b3f368ac4d9fa1429224eed13057bc4, type: 3}
+  - {fileID: 6264508331027378212, guid: 9fd0d7d40a78f3349b23ca1ecec2bde1, type: 3}
+  - {fileID: 4063967518126270210, guid: ddc64f7c121ad6b48bffc8122628d192, type: 3}
+  - {fileID: 4409117049028511648, guid: 5232f4b4b8fa27546a113432a9f5f4f2, type: 3}
+  - {fileID: 1543157069080698054, guid: 4483ebd0799afbd48bb14b9ec6960fe3, type: 3}
+--- !u!114 &114504932005003244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713942581300216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051b9adef5d31da4fb0f8f4fef5c2d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 45
