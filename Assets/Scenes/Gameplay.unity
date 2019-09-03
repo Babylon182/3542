@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 108689251}
   - component: {fileID: 108689250}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Darker than quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,13 +324,13 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1050,10 +1050,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82a7898cb5690a41a8a17878e8fc419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topLeft: {x: -6.5024023, y: 0, z: 11.547037}
-  topRight: {x: 6.5024033, y: 0, z: 11.547037}
-  bottomLeft: {x: -6.5024023, y: 0, z: -11.54704}
-  bottomRight: {x: 6.5024033, y: 0, z: -11.54704}
+  topLeft: {x: -6.4964147, y: 0, z: 11.547037}
+  topRight: {x: 6.4964156, y: 0, z: 11.547037}
+  bottomLeft: {x: -6.4964147, y: 0, z: -11.54704}
+  bottomRight: {x: 6.4964156, y: 0, z: -11.54704}
 --- !u!4 &1421422868
 Transform:
   m_ObjectHideFlags: 0
