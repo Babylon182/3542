@@ -9,6 +9,11 @@ public abstract class Weapon : MonoBehaviour
 
     protected abstract void CreateBullet();
 
+    public virtual void Awake()
+    {
+        currentTime = weaponData.rateOfFire;
+    }
+
     public virtual void Update()
     {
         currentTime += Time.deltaTime;

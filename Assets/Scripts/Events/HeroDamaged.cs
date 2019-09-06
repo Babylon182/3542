@@ -4,6 +4,9 @@ namespace Events
 {
     public class HeroDamaged : IGameEvent
     {
-        
+        public void Reset()
+        {
+            
+        }
     }
 }
