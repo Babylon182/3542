@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8481952666735225573}
   - component: {fileID: 7140805255284057114}
   m_Layer: 0
-  m_Name: FullPath
+  m_Name: SmallEnemyPath-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,11 +152,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.46
       objectReference: {fileID: 0}
-    - target: {fileID: 3105007488219919324, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82cbfc43ee5f3145a8c4b0688f386ba, type: 3}
 --- !u!4 &3482657587807180829 stripped
@@ -235,12 +230,12 @@ PrefabInstance:
     - target: {fileID: 3105007488460912688, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6
+      value: -3.42
       objectReference: {fileID: 0}
     - target: {fileID: 3105007488460912688, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.44
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 3105007488780563389, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
@@ -255,12 +250,12 @@ PrefabInstance:
     - target: {fileID: 3105007488757546143, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.69
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3105007488757546143, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.67
+      value: -2.12
       objectReference: {fileID: 0}
     - target: {fileID: 3105007488820220242, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
         type: 3}
@@ -271,11 +266,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -7.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105007488219919324, guid: b82cbfc43ee5f3145a8c4b0688f386ba,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82cbfc43ee5f3145a8c4b0688f386ba, type: 3}

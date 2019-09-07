@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 114522829310402642, guid: f07419e14184d8a4985ab1274652d5e9, type: 3}
   weaponType: 0
-  rateOfFire: 0.5
+  rateOfFire: 1

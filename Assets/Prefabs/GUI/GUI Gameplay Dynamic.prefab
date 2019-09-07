@@ -286,9 +286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalScore: {fileID: 11400000, guid: 5df91215a2502a14d8181665e4cc4c62, type: 2}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 21573761}
   combo: {fileID: 1969795144}
-  comboText: {fileID: 0}
+  comboText: {fileID: 1986886654}
   comboMeter: {fileID: 416246727}
   comboValues:
     maxMultiplier: 8
