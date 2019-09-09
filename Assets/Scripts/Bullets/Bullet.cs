@@ -39,12 +39,12 @@ public abstract class Bullet : MonoBehaviour , ICanCollide, IPoolable
         Gizmos.DrawWireSphere(transform.position , radiusSize);
     }
 
-    public void Init()
+    public virtual void Init()
     {
         collisionDetectorManager.AddBullet(this);
     }
 
-    public void Dispose()
+    public virtual void Dispose()
     {
         collisionDetectorManager.RemoveBullet(this);
     }

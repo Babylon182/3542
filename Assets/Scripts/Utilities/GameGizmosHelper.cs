@@ -17,13 +17,18 @@ public class GameGizmosHelper : MonoBehaviour
     
     private Boundaries boundaries;
 
-    private void OnEnable()
+    private void OnValidate()
+    {
+        GetBoundaries();
+    }
+
+    private void GetBoundaries()
     {
         boundaries = new Boundaries();
-        topLeft = new Vector3(boundaries.LeftBoundary, 0 , boundaries.TopBoundary);
-        bottomLeft = new Vector3(boundaries.LeftBoundary, 0 , boundaries.BottomBoundary);
-        topRight = new Vector3(boundaries.RightBoundary, 0 , boundaries.TopBoundary);
-        bottomRight = new Vector3(boundaries.RightBoundary, 0 , boundaries.BottomBoundary);
+        topLeft = new Vector3(boundaries.LeftBoundary, 0, boundaries.TopBoundary);
+        bottomLeft = new Vector3(boundaries.LeftBoundary, 0, boundaries.BottomBoundary);
+        topRight = new Vector3(boundaries.RightBoundary, 0, boundaries.TopBoundary);
+        bottomRight = new Vector3(boundaries.RightBoundary, 0, boundaries.BottomBoundary);
     }
 
     private void OnDrawGizmos()

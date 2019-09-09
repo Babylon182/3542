@@ -7,7 +7,7 @@ public class ScorePoints : MonoBehaviour
     [SerializeField]
     private float scorePoints;
     
-    private void OnDisable()
+    public void AddScore()
     {
         EventsManager.DispatchEvent(new ScoreEvent(scorePoints));
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using MEC;
 
 public class CollisionDetectorManager : Singleton<CollisionDetectorManager>
 {
@@ -10,33 +11,19 @@ public class CollisionDetectorManager : Singleton<CollisionDetectorManager>
 	private HashSet<DamageableEntity> allDamageableEntities = new HashSet<DamageableEntity>();
 	private HashSet<Tuple<ICanCollide, float>> entitiesThatCollide = new HashSet<Tuple<ICanCollide, float>>();
     private IEnumerable<ICanCollide> bulletsThatCollide;
+    private Boundaries boundaries;
 
     protected override void Awake()
 	{
 		base.Awake();
-		hero = FindObjectOfType<Hero>().GetComponent<DamageableEntity>();
+        boundaries = new Boundaries();
+        hero = FindObjectOfType<Hero>().GetComponent<DamageableEntity>();
 	}
 
 	private void Start()
 	{
-		bulletsThatCollide = allBullets.Where(bullet =>
-		{
-			return allDamageableEntities.Any(entity =>
-			{
-				var totalRadius = entity.RadiusSize * entity.RadiusSize + bullet.RadiusSize * bullet.RadiusSize;
-				var deltaVector = bullet.transform.position - entity.transform.position;
-
-				var isColliding = entity.Afiliation != bullet.Afiliation && deltaVector.sqrMagnitude < totalRadius;
-
-				if (isColliding)
-				{
-					Tuple<ICanCollide, float> tuple = new Tuple<ICanCollide, float>(entity, bullet.Damage);
-					entitiesThatCollide.Add(tuple);
-				}
-
-				return isColliding;
-			});
-		});
+        GetEntitiesThatCollide();
+        Timing.RunCoroutine(CheckEnemyOutsideBoundaries());
 	}
 
 	private void Update()
@@ -64,6 +51,28 @@ public class CollisionDetectorManager : Singleton<CollisionDetectorManager>
 		allDamageableEntities.Remove(damageableEntity);
 	}
 
+    private void GetEntitiesThatCollide()
+    {
+        bulletsThatCollide = allBullets.Where(bullet =>
+        {
+            return allDamageableEntities.Any(entity =>
+            {
+                var totalRadius = entity.RadiusSize * entity.RadiusSize + bullet.RadiusSize * bullet.RadiusSize;
+                var deltaVector = bullet.transform.position - entity.transform.position;
+
+                var isColliding = entity.Afiliation != bullet.Afiliation && deltaVector.sqrMagnitude < totalRadius;
+
+                if (isColliding)
+                {
+                    Tuple<ICanCollide, float> tuple = new Tuple<ICanCollide, float>(entity, bullet.Damage);
+                    entitiesThatCollide.Add(tuple);
+                }
+
+                return isColliding;
+            });
+        });
+    }
+
 	private void CheckCollisions()
 	{
 		foreach (var bullet in bulletsThatCollide.ToList())
@@ -90,5 +99,23 @@ public class CollisionDetectorManager : Singleton<CollisionDetectorManager>
 		}
 
 		entitiesThatCollide.Clear();
+    }
+
+    private IEnumerator<float> CheckEnemyOutsideBoundaries()
+    {
+        while (true)
+        {
+            var entitysOutsideBoundaries = allDamageableEntities.Where(entity =>
+            {
+                return entity.transform.position.z < boundaries.BottomBoundary;
+            });
+
+            foreach (var entity in entitysOutsideBoundaries.ToList())
+            {
+                entity.Remove();
+            }
+
+            yield return Timing.WaitForSeconds(1);
+        }
     }
 }

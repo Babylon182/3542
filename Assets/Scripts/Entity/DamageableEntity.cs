@@ -1,9 +1,13 @@
 ﻿using System;
 using CalongeCore.ObjectsPool;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
 {
+    public Action onDamage;
+    public Action onDeath;
+
     [SerializeField] 
     protected EntityType affiliation;
     
@@ -13,16 +17,16 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     [SerializeField] 
     private float radiusSize;
     
-    public Action onDamage;
-    public Action onDeath;
+    [SerializeField]
+    private UnityEvent onDestroy;
    
     public EntityType Afiliation => affiliation;
     public float RadiusSize => radiusSize;
     
     public void Awake()
     { 
-        onDamage += () => { };
-        onDeath += () => { };
+        onDamage += () => onDestroy.Invoke();
+        onDeath += () => Remove();
     }
     
     private void OnDrawGizmos()
@@ -35,10 +39,10 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     {
         life.Value -= damage;
         onDamage.Invoke();
+
         if (life.Value <= 0)
         {
             onDeath.Invoke();
-            GodPoolSingleton.Instance.Destroy(this.gameObject);
         }
     }
 
@@ -50,5 +54,10 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     public void Dispose()
     {
         CollisionDetectorManager.Instance.RemoveDamageableEntity(this);
+    }
+
+    public void Remove()
+    {
+        GodPoolSingleton.Instance.Destroy(this.gameObject);
     }
 }

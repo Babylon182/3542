@@ -747,6 +747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1436008587692502, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
+      propertyPath: m_Name
+      value: HeroShip
+      objectReference: {fileID: 0}
     - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.08
@@ -769,15 +773,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795768933903086, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae5d76ed348455546a32f1a717e3a15f, type: 3}
@@ -1344,7 +1360,8 @@ AudioSource:
   m_GameObject: {fileID: 2096516103}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 9310cbc88c1c1434ba1808297008996b,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b4682026693ca554f8b6a56d4acaa07e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5

@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundsDictionary: {fileID: 11400000, guid: 257904517552bd3478559dbd7378c9d9, type: 2}
+  defaultAudioMixer: {fileID: 24300002, guid: 9310cbc88c1c1434ba1808297008996b, type: 2}
   channelAmount: 5

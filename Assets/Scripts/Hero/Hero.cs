@@ -8,6 +8,15 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(DamageableEntity))]
 public class Hero : EntityMovement
 {
+    [SerializeField]
+    private float rotationAngle;
+
+    [SerializeField]
+    private float rotationSpeed;
+
+    [SerializeField]
+    private Transform heroArt;
+
     private Vector2 sideLimits;
     private Vector2 frontLimits;
     private HeroWeapon heroWeapon;
@@ -48,13 +57,22 @@ public class Hero : EntityMovement
 
     public override void Move(Vector3 destination)
     {
+        Vector3 newRotation = heroArt.transform.rotation.eulerAngles;
+
         if (destination == transform.position)
-            return;
+        {
+            newRotation.z = 0;
+        }
+        else
+        {
+            newRotation.z = destination.x < transform.position.x ? rotationAngle : -rotationAngle;
+        }
 
         destination.x = Mathf.Clamp(destination.x, sideLimits.x, sideLimits.y);
         destination.z = Mathf.Clamp(destination.z, frontLimits.x, frontLimits.y);
 
         transform.position = Vector3.MoveTowards(transform.position , destination, speed * Time.deltaTime);
+        heroArt.rotation = Quaternion.RotateTowards(heroArt.rotation, Quaternion.Euler(newRotation), rotationSpeed * Time.deltaTime);
     }
 
     private void HeroInputs()
