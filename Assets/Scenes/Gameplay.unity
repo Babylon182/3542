@@ -2077,22 +2077,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.28
       objectReference: {fileID: 0}
-    - target: {fileID: 3482657587807180828, guid: 62906cfc3ddd0334fb89427db0a430f5,
+    - target: {fileID: 2186027984039832610, guid: 62906cfc3ddd0334fb89427db0a430f5,
         type: 3}
       propertyPath: pathCheckpoints.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3482657587807180828, guid: 62906cfc3ddd0334fb89427db0a430f5,
+    - target: {fileID: 2186027984039832610, guid: 62906cfc3ddd0334fb89427db0a430f5,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2186027984039832610, guid: 62906cfc3ddd0334fb89427db0a430f5,
+    - target: {fileID: 3482657587807180828, guid: 62906cfc3ddd0334fb89427db0a430f5,
         type: 3}
       propertyPath: pathCheckpoints.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2186027984039832610, guid: 62906cfc3ddd0334fb89427db0a430f5,
+    - target: {fileID: 3482657587807180828, guid: 62906cfc3ddd0334fb89427db0a430f5,
         type: 3}
       propertyPath: m_Enabled
       value: 0
