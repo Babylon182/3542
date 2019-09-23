@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField]
     protected WeaponData weaponData;
-    
-    private float currentTime;
+
+    protected float currentTime;
 
     protected abstract void CreateBullet();
 

@@ -19,14 +19,17 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
     
     [SerializeField]
     private UnityEvent onDestroy;
-   
+
+    private float maxLife;
+
     public EntityType Afiliation => affiliation;
     public float RadiusSize => radiusSize;
     
     public void Awake()
-    { 
-        onDamage += () => onDestroy.Invoke();
-        onDeath += () => Remove();
+    {
+        maxLife = life.Value;
+        onDamage += () => { };
+        onDeath  += () => Remove();
     }
     
     private void OnDrawGizmos()
@@ -53,11 +56,13 @@ public class DamageableEntity : MonoBehaviour , ICanCollide, IPoolable
 
     public void Dispose()
     {
+        life.Value = maxLife;
         CollisionDetectorManager.Instance.RemoveDamageableEntity(this);
     }
 
     public void Remove()
     {
+        onDestroy.Invoke();
         GodPoolSingleton.Instance.Destroy(this.gameObject);
     }
 }

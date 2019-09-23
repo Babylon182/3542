@@ -17,6 +17,9 @@ public class Hero : EntityMovement
     [SerializeField]
     private Transform heroArt;
 
+    [SerializeField]
+    private float positionOffSet;
+
     private Vector2 sideLimits;
     private Vector2 frontLimits;
     private HeroWeapon heroWeapon;
@@ -51,7 +54,7 @@ public class Hero : EntityMovement
 
     private void OnHeroDamage()
     {
-        transform.position = Vector3.zero;
+        //transform.position = Vector3.zero;
         EventsManager.DispatchEvent(new HeroDamaged());
     }
 
@@ -93,6 +96,7 @@ public class Hero : EntityMovement
             if (plane.Raycast(ray, out enter))
             {
                 Vector3 hitPoint = ray.GetPoint(enter);
+                hitPoint.z += positionOffSet;
                 Move(hitPoint);
             }
         }
@@ -100,22 +104,17 @@ public class Hero : EntityMovement
         if (!EventSystem.current.IsPointerOverGameObject(0))
         {
             var plane = new Plane(Vector3.up, transform.position);
-            
-
-
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-
-            
             float enter = 0.0f;
             if (plane.Raycast(ray, out enter))
             {
                 Vector3 hitPoint = ray.GetPoint(enter);
+                hitPoint.z += positionOffSet;
                 Move(hitPoint);
             }
         }
 #endif
-            
-        
+
     }
 
     private void ShootInputs()
@@ -125,7 +124,7 @@ public class Hero : EntityMovement
 #if UNITY_EDITOR
         if (InputController.GetKey(GameInputs.Fire))
         {
-            heroWeapon.FireSecondary();
+            //heroWeapon.FireSecondary();
         }
 #endif
     }

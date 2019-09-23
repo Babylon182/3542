@@ -3,7 +3,7 @@ using CalongeCore.ObjectsPool;
 using CalongeCore.SoundManager;
 using UnityEngine;
 
-public class WeaponMultiShot : Weapon
+public class WeaponMultiShot : WeaponSecondary
 {
     [SerializeField]
     private int numberObBullets;

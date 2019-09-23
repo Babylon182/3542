@@ -2,7 +2,7 @@
 using CalongeCore.ObjectsPool;
 using CalongeCore.SoundManager;
 
-public class WeaponBasic : Weapon
+public class WeaponPrimary : Weapon
 {
     protected override void CreateBullet()
     {

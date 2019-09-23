@@ -64,7 +64,7 @@ MonoBehaviour:
   affiliation: 1
   life:
     useConstant: 1
-    constantValue: 1
+    constantValue: 3
     variable: {fileID: 0}
   radiusSize: 1
   onDestroy:

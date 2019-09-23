@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 6b0430a1074dcda4f8c38136a0b93769, type: 2}
+  canvasImage: {fileID: 0}
   numberObBullets: 3
   degrees: 15
 --- !u!1 &1418834904995042
@@ -359,6 +360,7 @@ MonoBehaviour:
   rotationAngle: 45
   rotationSpeed: 150
   heroArt: {fileID: 2965396469203680002}
+  positionOffSet: 1
 --- !u!114 &114474698985039666
 MonoBehaviour:
   m_ObjectHideFlags: 0
